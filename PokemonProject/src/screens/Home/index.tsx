@@ -1,9 +1,10 @@
-import { Text, TextInputComponent, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 import React, { Component } from 'react';
 
-import {Botao} from '../../components/BotaoProps'
+import { Botao } from '../../components/BotaoProps'
 import styles from './styles'
 import { TextInput } from 'react-native-paper';
+import ImageComp from '../../components/ImageComp';
 export default class Home extends Component {
 
   state = {
@@ -11,20 +12,20 @@ export default class Home extends Component {
   }
 
   mudarNome = () => {
-    this.setState({nome:"Outro Nome"})
+    this.setState({ nome: "Outro Nome" })
   }
   onChangeText = (nome) => {
-    this.setState({nome})
+    this.setState({ nome })
   }
-
 
 
   render() {
     return (
       <View style={styles.container}>
+        <ImageComp/>
         <Text >{this.state.nome}</Text>
-        <TextInput style={styles.textImput} value={this.state.nome} onChangeText={this.onChangeText}/>
-        <Botao title="Mudar Nome" onPress={this.mudarNome}/>
+        <TextInput style={styles.textImput} value={this.state.nome} onChangeText={this.onChangeText} />
+        <Botao title="Mudar Nome" onPress={this.mudarNome} />
       </View>
     );
   }
