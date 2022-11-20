@@ -1,39 +1,21 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, StackRouter } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Home from '../screens/Home';
-import ButtonVertical from '../components/BotaoVertical';
+import MeuComponente from '../components/MeuComponente';
+import ImageComp from '../components/ImageComp';
 
-const Tab = createBottomTabNavigator<RootTabParamList>();
-const Stack = createNativeStackNavigator()
+const Stack = createStackNavigator()
 
-export type RootTabParamList = {
-    Home: {token:string};
-}
-
-const TabNavigator = () =>{
+export default function index() {
     return(
-    <Tab.Navigator
-            screenOptions={{
-                headerShown: false,
-                tabBarActiveTintColor: "#fff",
-                tabBarInactiveTintColor: "#aaa",
-                tabBarInactiveBackgroundColor: "#000",
-                tabBarStyle: { backgroundColor: "#000", paddingBottom: 1 }
-            }}
-        >
-            <Tab.Screen name='Home' component={Home} options={{
-                    tabBarIcon: ({ color }) => {
-                        return (
-                            <ButtonVertical icon="home" text={Home}/>)}}}/>
-        </Tab.Navigator>)}
-        
-export function Routes() {
-    return (
-        <NavigationContainer>
-            <TabNavigator/>
+        <NavigationContainer> 
+            <Stack.Navigator initialRouteName='Tela Inicial'> 
+        <Stack.Screen name="Tela Inicial" component={MeuComponente}/>
+        <Stack.Screen name="imagem" component={ImageComp}/>
+
+            </Stack.Navigator>
         </NavigationContainer>
-    );
+    )
+
 }

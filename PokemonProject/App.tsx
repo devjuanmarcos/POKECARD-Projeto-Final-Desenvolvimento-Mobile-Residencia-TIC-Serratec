@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './src/screens/Home';
-import { Routes } from './src/routes';
+import  Routes  from './src/routes';
 
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
