@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import { Botao } from '../../components/BotaoProps'
 import styles from './styles'
-import { TextInput } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 import ImageComp from '../../components/ImageComp';
 export default class Home extends Component {
 
@@ -20,12 +20,14 @@ export default class Home extends Component {
 
 
   render() {
+    const {  }  = this.props
     return (
       <View style={styles.container}>
         <ImageComp/>
         <Text >{this.state.nome}</Text>
         <TextInput style={styles.textImput} value={this.state.nome} onChangeText={this.onChangeText} />
         <Botao title="Mudar Nome" onPress={this.mudarNome} />
+        {/* <Botao title="image" onPress={() => { navigation.push(" ImageComp ")}}/> */}
       </View>
     );
   }
