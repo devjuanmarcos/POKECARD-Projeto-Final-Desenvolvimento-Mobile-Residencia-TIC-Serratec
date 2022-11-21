@@ -18,4 +18,10 @@ export const styles = StyleSheet.create({
         letterSpacing: 2,
     },
 
+    header:{
+        paddingTop:50,
+        flex:1,
+        
+    }
+
 })
