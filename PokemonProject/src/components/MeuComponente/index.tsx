@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, Button } from 'react-native'
-import { styles } from "../BotaoProps/styles";
+
+import { styles } from "./styles";
+
+
 
 
 export default class MeuComponente extends Component {
