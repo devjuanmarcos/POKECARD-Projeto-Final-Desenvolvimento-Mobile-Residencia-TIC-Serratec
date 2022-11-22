@@ -10,10 +10,10 @@ export default class MeuComponente extends Component {
       <View style={styles.header}>
         <Text> Meu Componente Inicial</Text>
         <Button
-          title="imagem"
+          title="Imagem"
           onPress={() => {
-            navigation.navigate("imagem", {
-              params: { texto: "asdasdasdasda sdasdas dasdasdasd" },
+            navigation.navigate("Imagem", {
+              params: { texto: "BatataTeste" },
             });
           }}
         ></Button>

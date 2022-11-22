@@ -25,7 +25,7 @@ export default function index() {
           name="Tela Inicial"
           component={MeuComponente}
         />
-        <Stack.Screen name="imagem" component={ImageComp} />
+        <Stack.Screen name="Imagem" component={ImageComp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

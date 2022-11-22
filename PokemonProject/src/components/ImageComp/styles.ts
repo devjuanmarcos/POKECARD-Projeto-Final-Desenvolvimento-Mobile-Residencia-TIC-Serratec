@@ -8,16 +8,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
   },
   rowStyle: {
     flexDirection: "row",
+    marginTop: 10,
   },
   textWidth: {
-    width: 100,
+    width: "50%",
     alignSelf: "flex-start",
-    marginHorizontal: 20,
-    backgroundColor: "#e51091",
+    marginStart: 0,
+    marginTop: 10,
+  },
+  imageWidth: {
+    width: "50%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginStart: 25,
   },
 });
 
