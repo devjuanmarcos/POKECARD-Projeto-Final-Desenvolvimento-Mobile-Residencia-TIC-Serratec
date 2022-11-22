@@ -2,15 +2,22 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   imagemTamanho: {
-    width: 200,
-    height: 200,
-    resizeMode: "contain",
+    width: 50,
+    height: 50,
   },
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
     justifyContent: "center",
+  },
+  rowStyle: {
+    flexDirection: "row",
+  },
+  textWidth: {
+    width: 100,
+    alignSelf: "flex-start",
+    marginHorizontal: 20,
+    backgroundColor: "#e51091",
   },
 });
 
