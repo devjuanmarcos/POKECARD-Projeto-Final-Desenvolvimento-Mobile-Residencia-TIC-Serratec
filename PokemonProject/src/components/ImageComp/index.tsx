@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {View, Image, Text} from 'react-native'
 import styles from "./styles";
-
+{/*
 export default class ImageComp extends Component{
 
     componentWillMount = () => {
@@ -9,8 +9,6 @@ export default class ImageComp extends Component{
         this.setState({texto})
     }
         
-    
-
     render () {
 
         return (
@@ -24,4 +22,4 @@ export default class ImageComp extends Component{
 
     }
 
-}
+}*/}
