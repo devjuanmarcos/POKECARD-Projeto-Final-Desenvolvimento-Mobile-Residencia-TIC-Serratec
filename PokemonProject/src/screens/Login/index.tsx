@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { TextInput, Button } from "react-native-paper";
-
+import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
 const Login = () => {
@@ -22,11 +22,14 @@ const Login = () => {
         style={{ width: "100%", height: "100%" }}
         source={require("../../assets/Pokemon-2.png")}
       >
-        <Image
+        <Animatable.Image
+          animation="pulse"
+          iterationCount="infinite"
+          direction="alternate"
           style={styles.logo}
           source={require("../../assets/pokemon-logo-8.png")}
         />
-        <View style={{ padding: 20 }}>
+        <Animatable.View style={{ padding: 20 }} animation={zoomOut}>
           <TextInput
             mode="flat"
             label="Email ou número de telefone"
@@ -38,7 +41,6 @@ const Login = () => {
           />
 
           <TextInput
-            blurOnSubmit="true"
             label="Senha"
             mode="flat"
             style={styles.input}
@@ -87,10 +89,24 @@ const Login = () => {
               você não é um robô. Saiba mais.
             </Text>
           </TouchableOpacity>
-        </View>
+        </Animatable.View>
       </ImageBackground>
     </View>
   );
+};
+const zoomOut = {
+  0: {
+    opacity: 0,
+    scale: 0,
+  },
+  0.5: {
+    opacity: 1,
+    scale: 0.3,
+  },
+  1: {
+    opacity: 1,
+    scale: 1,
+  },
 };
 
 export default Login;
