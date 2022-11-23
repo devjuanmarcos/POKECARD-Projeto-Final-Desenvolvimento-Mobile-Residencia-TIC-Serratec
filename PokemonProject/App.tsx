@@ -1,21 +1,14 @@
 import React from "react";
 import { Routes } from "./src/routes";
-import Login from "./src/screens/Login";
-
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import { StatusBar } from "expo-status-bar";
 
-const App = () => {
-  const theme = {
-    ...DefaultTheme,
-    colors: {
-      ...DefaultTheme.colors,
-      primary: "#E50914",
-      background: "#3C3C3C",
-      placeholder: "#ffffff",
-      text: "#ffffff",
-    },
-  };
+export default function App  () {
+  
 
-  return <Login />;
-};
-export default App;
+  return (
+    
+    <Routes/>
+  
+  );
+}
