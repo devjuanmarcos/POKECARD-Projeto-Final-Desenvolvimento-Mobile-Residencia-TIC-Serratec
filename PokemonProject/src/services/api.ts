@@ -4,24 +4,25 @@ const apiItensMagicos = axios.create({
     baseURL: 'https://www.dnd5eapi.co/api/'
 });
 
-export interface listaEquipamentos {
+export interface listaPokemon {
     index: string,
     name: string,
-    url: string
+    url: string,
+    preco?: number
 }
 
-interface getEquipamentosRespostaProps {
+interface getPokemonRespostaProps {
     count: number,
-    results: listaEquipamentos[]
+    results: listaPokemon[]
 }
 
-export function getEquipamentos(): Promise<AxiosResponse<getEquipamentosRespostaProps, any>> {
+export function getEquipamentos(): Promise<AxiosResponse<getPokemonRespostaProps, any>> {
     let url = `magic-items/`;
 
     return apiItensMagicos.get(url);
 }
 
-export interface equipamentoStatusProps {
+export interface pokemonStatusProps {
     index: string;
     name: string;
     equipment_category: EquipmentCategory;
@@ -41,7 +42,7 @@ export interface Rarity {
     name: string;
 }
 
-export function getEquipementoEspecifico(index: string): Promise<AxiosResponse<equipamentoStatusProps | any>> {
+export function getPokemonEspecifico(index: string): Promise<AxiosResponse<pokemonStatusProps | any>> {
     let url = `magic-items/${index}`
 
     return apiItensMagicos.get(url);

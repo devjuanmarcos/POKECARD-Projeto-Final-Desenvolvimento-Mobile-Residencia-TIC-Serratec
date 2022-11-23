@@ -17,7 +17,7 @@ interface ModalStatusProps extends ModalProps {
 
 export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalStatusProps) => {
 
-    const [pokemonStatus, setPokemonStatus] = useState<PokemonStatusProps>();
+    const [pokemonStatus, setPokemonStatus] = useState<pokemonStatusProps>();
     const [carregando, setCarregando] = useState<boolean>(true);
 
     useEffect(() => {
@@ -36,13 +36,13 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
     let precoRandomico = Math.floor(Math.random() * 1000)
 
     function botaPokemonNoCarrinho() {
-        let equipamentoComPreco: listaPokemon = {
-            index: PokemonStatus.index,
-            name: PokemonStatus.name,
-            url: PokemonStatus.url,
+        let pokemonComPreco: listaPokemon = {
+            index: pokemonStatus.index,
+            name: pokemonStatus.name,
+            url: pokemonStatus.url,
             preco: precoRandomico
         }
-        salvaListaDePokemon(PokemonComPreco)
+        salvaListaDePokemon(pokemonComPreco)
         setModal(false);
     }
 
