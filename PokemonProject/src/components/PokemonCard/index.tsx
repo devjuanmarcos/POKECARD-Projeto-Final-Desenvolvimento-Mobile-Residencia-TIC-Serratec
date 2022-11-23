@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { Text, TouchableOpacityProps, TouchableOpacity, Image } from "react-native";
 import { listaPokemon } from "../../services/api";
 import { styles } from "./styles";
-import { Icon } from "react-native-paper/lib/typescript/components/List/List";
+
+import { FontAwesome } from '@expo/vector-icons';
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 
-interface PkemonCardProps extends TouchableOpacityProps {
-    equipamento: listaPokemon;
+interface PokemonCardProps extends TouchableOpacityProps {
+    pokemon: listaPokemon;
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
     setIndexSelecionado: React.Dispatch<React.SetStateAction<string>>;
     setPrecoSelecionado?: React.Dispatch<React.SetStateAction<number>>;
@@ -17,8 +18,8 @@ export const PokemonCard = ({ pokemon, setModal,setPrecoSelecionado, setIndexSel
     const removePokemonDoCarrinho = useContext(CarrinhoContexto).removePokemonDoCarrinho
 
     function abreModal() {
-        setIndexSelecionado(pokemon.index);
-        setPrecoSelecionado && setPrecoSelecionado(pokemon.preco)
+        setIndexSelecionado(pokemon.id);
+        //setPrecoSelecionado && setPrecoSelecionado(pokemon.preco)
         setModal(true);
     }
 
@@ -28,11 +29,11 @@ export const PokemonCard = ({ pokemon, setModal,setPrecoSelecionado, setIndexSel
             <Text style={styles.textMagicItem}>
                 {pokemon.name}
             </Text>
-            {pokemon.preco &&
+            {/*{pokemon.preco &&
                 <TouchableOpacity onPress={()=>removePokemonDoCarrinho(pokemon.index)}>
-                    <Image source={Icon} style={styles.closeIcon}/>
+                    <FontAwesome name="close" size={25} color="#fff" />
                 </TouchableOpacity>
-            }
+            }*/}
         </TouchableOpacity>
     )
 }
