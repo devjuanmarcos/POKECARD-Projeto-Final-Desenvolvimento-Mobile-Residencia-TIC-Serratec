@@ -5,51 +5,107 @@ const styles = StyleSheet.create({
 
 
     container: {
-        flex: 1,
-        backgroundColor: '',
-        alignItems:'center',
-        padding:10,
-        
 
+        flex: 1,
+        backgroundColor: '#000',
+        padding:0,
+       
     },
     header:{
-        paddingTop: 20,
-        position:'relative',
+        
+        margin:10,
+        marginTop:40,
+        paddingTop: 5,
+        paddingHorizontal:10,
         flexDirection:'row',
+        alignItems:'center',
         
     },
     headerButton:{
+
+        alignItems:'center',
         display:'flex',
-        flexDirection:'row',
+        
+    },
+    boxButton:{
+
+        borderTopStartRadius:20,
+        borderBottomRightRadius:10,
+        height:300,
+        width:'90%',
+        shadowOpacity: 0.5,
+        elevation: 50,
+        shadowRadius: 1 ,
+        shadowOffset : { width: 57, height: 13},
+        margin:10,
+        
         
     },
     button:{
-        color:'#000',
-        height:20,
-        shadow:10,
+        
+        height:130,
+        width:'100%',
         shadowColor:'#000000',
-        shadowOpacity:10
+        backgroundColor:'#e3e8ec',
+        borderTopWidth:10,
+        position:'relative',
+        borderTopColor:'#c22',
+        alignItems:"center",
+        borderBottomEndRadius:10,
+        borderBottomLeftRadius:10
+    
     },
+    imageBox:{
+
+      width:'100%',
+      height:'60%',
+      position:'relative',
+      
+    },
+    
     content:{
+
         padding:10,
         flexDirection:'row',
         direction:'inherit'
        
     },
-    text: {
-        color: '#000'
+    textoDescricao: {
+
+        color: '#000',
+        alignItems:'center',
+        justifyContent:'center',
+        fontSize:20
+
     },
     buttonPlay: {
-        marginVertical: 20,
+
+        marginVertical: 10,
        
     },
     title:{
-        color: '#000000',
-        fontSize: 20,
+
+        color: '#000',
+        fontSize: 17,
+        marginLeft:10,
         fontWeight: 'bold',
-        padding:5
+        alignItems:'center'
 
     },
+    image:{
+
+        paddingHorizontal:10,
+        height:40,
+        width:40
+    },
+    
+    imageBackground: {
+
+         width: '100%',
+        height: '100%', 
+    
+    },
+   
 
 });
       
