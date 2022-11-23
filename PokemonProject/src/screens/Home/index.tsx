@@ -35,6 +35,7 @@ export const Home = ({navigation}) =>{
         
         </View>
         <View style={styles.headerButton}  >
+          
           <View style={styles.boxButton}>
             <Image style={styles.imageBox}
               source={require('../../assets/pikaEvol.jpg')}/>

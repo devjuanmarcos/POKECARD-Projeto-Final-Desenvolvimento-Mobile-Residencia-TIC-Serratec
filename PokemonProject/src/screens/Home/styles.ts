@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         
     },
     boxButton:{
-
-        borderTopStartRadius:20,
+       
+        borderRadius:20,
         borderBottomRightRadius:10,
         height:300,
         width:'90%',
@@ -56,10 +56,11 @@ const styles = StyleSheet.create({
     
     },
     imageBox:{
-
+      marginBottom:-10,
       width:'100%',
       height:'60%',
       position:'relative',
+      borderRadius:10
       
     },
     
