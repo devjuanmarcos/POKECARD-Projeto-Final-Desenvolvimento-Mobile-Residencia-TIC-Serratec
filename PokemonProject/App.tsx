@@ -16,6 +16,6 @@ const App = () => {
     },
   };
 
-  return <Login />;
+  return <Routes/>;
 };
 export default App;

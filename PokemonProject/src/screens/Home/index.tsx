@@ -6,6 +6,7 @@ import styles from './styles'
 import { Fontisto } from '@expo/vector-icons'; 
 
 export const Home = ({navigation}) =>{
+  
 
   const [saudacoes, setSaudacoes] = useState<string>("");
 

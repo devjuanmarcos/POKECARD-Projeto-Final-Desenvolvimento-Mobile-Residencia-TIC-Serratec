@@ -10,11 +10,14 @@ import { TextInput, Button } from "react-native-paper";
 
 import styles from "./styles";
 
-const Login = () => {
+const Login = ({ navigation })  => {
   const [credenciais, setCredenciais] = useState({
     email: "",
     senha: "",
   });
+    const Telahome = () => {
+    navigation.push("Home");
+  };
 
   return (
     <View style={styles.bgDark}>
@@ -38,7 +41,7 @@ const Login = () => {
           />
 
           <TextInput
-            blurOnSubmit="true"
+           // blurOnSubmit="true"
             label="Senha"
             mode="flat"
             style={styles.input}
@@ -54,7 +57,8 @@ const Login = () => {
               mode="text"
               style={styles.input}
               textColor="#fff"
-              onPress={() => console.log("Pressed")}
+              //onPress={() => console.log("Pressed")}
+              onPress={Telahome}
             >
               Entrar
             </Button>
