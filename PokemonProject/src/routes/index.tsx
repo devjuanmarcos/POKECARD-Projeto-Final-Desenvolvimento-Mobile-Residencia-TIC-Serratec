@@ -84,7 +84,7 @@ export function Routes() {
           component={Login}
         />
         
-        <Stack.Screen name="Login" component={Login} />
+       
         <Stack.Screen  options={{ headerShown: false }} name="Home" component={Routeshome} />
 
       </Stack.Navigator> 
