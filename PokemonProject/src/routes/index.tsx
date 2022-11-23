@@ -8,41 +8,21 @@ import ImageComp from "../components/ImageComp";
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import { Pokemon } from "../screens/Produto";
 import { Home } from "../screens/Home";
+import Login from "../screens/Login";
 
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
-  Home: { token: string };
+  home: { token: string };
   Cartas: undefined;
   Carrinho: undefined;
 }
-
-export function Routes() {
+export function Routeshome() {
 
   return (
-    <NavigationContainer>
-      {/* <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "red",
-          },
-          headerTintColor: "white",
-        }}
-        initialRouteName="Tela Inicial"
-      >
-        <Stack.Screen
-          options={{ headerShown: true }}
-          name="Tela Inicial"
-          component={MeuComponente}
-        />
-        
-        <Stack.Screen name="Imagem" component={ImageComp} />
-        <Stack.Screen name="Loja" component={Pokemon} />
-
-      </Stack.Navigator> */}
-      <Tab.Navigator
+     <Tab.Navigator
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: "#fff",
@@ -52,7 +32,7 @@ export function Routes() {
             }}
         >
             <Tab.Screen
-                name='Home'
+                name='home'
                 component={Home}
                 options={{
                     tabBarIcon: ({ color }) => {
@@ -80,8 +60,35 @@ export function Routes() {
                 }}
             />
         </Tab.Navigator>
-      
+
+  );
+            }
+
+export function Routes() {
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "red",
+          },
+          headerTintColor: "white",
+        }}
+        initialRouteName="Login"
+      >
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Login"
+          component={Login}
+        />
+        <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Home" 
+          component={Routeshome} />
+
+      </Stack.Navigator> 
     </NavigationContainer>
-    
+
   );
 }
