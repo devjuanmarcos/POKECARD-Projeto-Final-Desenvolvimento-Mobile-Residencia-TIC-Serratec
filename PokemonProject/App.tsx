@@ -1,9 +1,6 @@
 import React from "react";
 import { Routes } from "./src/routes";
-import Login from "./src/screens/Login";
-
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
-import { Pokemon } from "./src/screens/Produto";
 
 const App = () => {
   const theme = {
@@ -17,6 +14,6 @@ const App = () => {
     },
   };
 
-  return <Pokemon />;
+  return <Routes />;
 };
 export default App;

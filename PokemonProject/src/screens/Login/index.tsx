@@ -10,11 +10,14 @@ import { TextInput, Button } from "react-native-paper";
 import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
-const Login = (navigation) => {
+const Login = ({ navigation })  => {
   const [credenciais, setCredenciais] = useState({
     email: "",
     senha: "",
   });
+    const TelaHome = () => {
+    navigation.push("Home");
+  };
 
   const entrar = () => {
     navigation.reset({
@@ -63,7 +66,8 @@ const Login = (navigation) => {
               mode="text"
               style={styles.input}
               textColor="#fff"
-              onPress={() => console.log("Pressed")}
+             // onPress={() => console.log("Pressed")}
+             onPress={TelaHome}
             >
               Entrar
             </Button>
