@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes } from "./src/routes";
+import Login from "./src/screens/Login";
 
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 
@@ -15,6 +16,6 @@ const App = () => {
     },
   };
 
-  return <Routes />;
+  return <Login />;
 };
 export default App;
