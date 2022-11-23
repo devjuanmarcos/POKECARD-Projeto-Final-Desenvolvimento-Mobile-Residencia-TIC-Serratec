@@ -82,9 +82,10 @@ export function Routes() {
           name="Login"
           component={Login}
         />
-
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen  options={{ headerShown: false }} name="Home" component={Routeshome} />
+        <Stack.Screen  
+        options={{ headerShown: false }} 
+        name="Home" 
+        component={Routeshome} />
 
       </Stack.Navigator> 
     </NavigationContainer>
