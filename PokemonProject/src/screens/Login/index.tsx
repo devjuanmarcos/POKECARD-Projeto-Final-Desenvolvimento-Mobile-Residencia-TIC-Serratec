@@ -10,11 +10,18 @@ import { TextInput, Button } from "react-native-paper";
 import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
-const Login = () => {
+const Login = (navigation) => {
   const [credenciais, setCredenciais] = useState({
     email: "",
     senha: "",
   });
+
+  const entrar = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "Routes" }],
+    });
+  };
 
   return (
     <View style={styles.bgDark}>
