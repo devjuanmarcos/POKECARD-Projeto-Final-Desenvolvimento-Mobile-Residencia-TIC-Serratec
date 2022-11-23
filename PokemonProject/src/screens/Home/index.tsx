@@ -1,35 +1,58 @@
 import { Text, View } from 'react-native';
-import React, { Component } from 'react';
-
+import React, { useEffect, useState } from "react";
 import { Botao } from '../../components/BotaoProps'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles'
-import { Button, TextInput } from 'react-native-paper';
-import ImageComp from '../../components/ImageComp';
-export default class Home extends Component {
+import { Fontisto } from '@expo/vector-icons'; 
 
-  state = {
-    nome: "Juan"
-  }
+export const Home = ({navigation}) =>{
 
-  mudarNome = () => {
-    this.setState({ nome: "Outro Nome" })
-  }
-  onChangeText = (nome) => {
-    this.setState({ nome })
-  }
+  const [saudacoes, setSaudacoes] = useState<string>("");
 
 
-  render() {
-    const {  }  = this.props
-    return (
-      <View style={styles.container}>
-        <ImageComp/>
-        <Text >{this.state.nome}</Text>
-        <TextInput style={styles.textImput} value={this.state.nome} onChangeText={this.onChangeText} />
-        <Botao title="Mudar Nome" onPress={this.mudarNome} />
-        {/* <Botao title="image" onPress={() => { navigation.push(" ImageComp ")}}/> */}
+  useEffect(() => {
+      const horaAtual = new Date().getHours();
+      if (horaAtual < 12) {
+          setSaudacoes("Bom Dia!")
+      } else if (horaAtual >= 12 && horaAtual < 18) {
+          setSaudacoes("Boa Tarde!")
+      } else {
+          setSaudacoes("Boa noite!")
+      }
+  }, []);
+  
+ 
+  
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+      <Fontisto name="smiling" size={24} color="black" />
+          <Text style={styles.title}>
+                  {saudacoes}
+              </Text>
+          <Text style={styles.title}>
+                  Seja Bem Vindo!
+              </Text>
+        </View> 
+        <View style={styles.headerButton}  >
+        <Botao style={styles.button}
+          title="Imagem"
+          onPress={() => {
+            navigation.navigate("Imagem", {
+              params: { texto: "BatataTeste" },
+            });
+          }}
+        ></Botao>
+        <Botao style={styles.button}
+          title="Pokemon"
+          onPress={() => {
+            navigation.navigate("Pokemon", {
+              params: { texto: "How is that pokemon?" },
+            });
+          }}
+        ></Botao>
       </View>
-    );
-  }
+      
+    </View>
+  );
 }
-
