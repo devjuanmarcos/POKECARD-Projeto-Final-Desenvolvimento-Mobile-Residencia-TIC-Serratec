@@ -26,7 +26,7 @@ export const Carrinho = () => {
             </Text>
             <FlatList
                 data={listaDePokemon}
-                keyExtractor={item => item.index}
+                keyExtractor={item => item.id}
                 renderItem={({ item }) => {
                     return (
                         <PokemonCard
@@ -49,7 +49,7 @@ export const Carrinho = () => {
             </View>
             {modal &&
                 <ModalStatus
-                    index={indexSelecionado}
+                    id={indexSelecionado}
                     modal={modal}
                     setModal={setModal}
                     preco={precoSelecionado}

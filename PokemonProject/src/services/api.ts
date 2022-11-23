@@ -14,7 +14,7 @@ export interface listaPokemon {
 
 interface getPokemonRespostaProps {
     count: number,
-    results: listaPokemon[]
+    data: listaPokemon[]
 }
 
 export function getPokemon(): Promise<AxiosResponse<getPokemonRespostaProps, any>> {

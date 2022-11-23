@@ -21,7 +21,7 @@ export const Pokemon = () => {
     function requisicaoListaPokemon() {
         setCarregando(true);
         getPokemon().then((res) => {
-            setListaPokemon(res.data.results)
+            setListaPokemon(res.data.data)
         }).catch((err) => {
             console.log(err)
         }).finally(() => {
