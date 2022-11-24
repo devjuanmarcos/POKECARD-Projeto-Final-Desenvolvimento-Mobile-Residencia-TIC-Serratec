@@ -1,9 +1,7 @@
-import { Text, View } from 'react-native';
+import { Text, View, Image, ImageBackground, ScrollView } from 'react-native';
 import React, { useEffect, useState } from "react";
-import { Botao } from '../../components/BotaoProps'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import styles from './styles'
-import { Fontisto } from '@expo/vector-icons'; 
+import { Botao } from '../../components/BotaoProps';
+import styles from './styles';
 
 export const Home = ({navigation}) =>{
 
@@ -13,9 +11,9 @@ export const Home = ({navigation}) =>{
   useEffect(() => {
       const horaAtual = new Date().getHours();
       if (horaAtual < 12) {
-          setSaudacoes("Bom Dia!")
+          setSaudacoes("Bom dia!")
       } else if (horaAtual >= 12 && horaAtual < 18) {
-          setSaudacoes("Boa Tarde!")
+          setSaudacoes("Boa tarde!")
       } else {
           setSaudacoes("Boa noite!")
       }
@@ -25,34 +23,41 @@ export const Home = ({navigation}) =>{
   
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-      <Fontisto name="smiling" size={24} color="black" />
-          <Text style={styles.title}>
-                  {saudacoes}
-              </Text>
-          <Text style={styles.title}>
-                  Seja Bem Vindo!
-              </Text>
-        </View> 
-        <View style={styles.headerButton}  >
-        <Botao style={styles.button}
-          title="Imagem"
-          onPress={() => {
-            navigation.navigate("Imagem", {
-              params: { texto: "BatataTeste" },
-            });
-          }}
-        ></Botao>
-        <Botao style={styles.button}
-          title="Pokemon"
-          onPress={() => {
-            navigation.navigate("Pokemon", {
-              params: { texto: "How is that pokemon?" },
-            });
-          }}
-        ></Botao>
-      </View>
+      <ImageBackground style={styles.imageBackground}
+      source={require('../../assets/fundoHome.png')}>
       
+        <View style={styles.header}>
+          <Image style={styles.image}
+            source={require('../../assets/logoPocke.png')}/>
+            <Text style={styles.title}>
+                    {saudacoes} Pronto para aventura?
+            </Text>
+        
+        </View>
+        <View style={styles.headerButton}  >
+          
+          <View style={styles.boxButton}>
+            <Image style={styles.imageBox}
+              source={require('../../assets/pikaEvol.jpg')}/>
+              <Botao style={styles.button}
+                title='PACK PIKACHU'
+              >
+                
+              <Text style={styles.textoDescricao}>
+                As mais fofas imagens fofinhas do Pikachu.
+              </Text>
+              </Botao>
+          </View>
+          <View style={styles.boxButton}>
+          <Image style={styles.imageBox}
+            source={require('../../assets/PikaDeboa.jpg')}/>
+            <Botao style={styles.button}
+              title="CARTAS POKEMON"
+            ></Botao>
+          </View>
+        </View> 
+       </ImageBackground> 
+       
     </View>
   );
 }
