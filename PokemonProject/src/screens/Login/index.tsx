@@ -9,6 +9,7 @@ import {
 import { TextInput, Button } from "react-native-paper";
 import * as Animatable from "react-native-animatable";
 import styles from "./styles";
+import Register from "../Register";
 
 const Login = ({ navigation })  => {
   const [credenciais, setCredenciais] = useState({
@@ -17,6 +18,9 @@ const Login = ({ navigation })  => {
   });
     const TelaHome = () => {
     navigation.push("Home");
+  };
+  const TelaRegister = () => {
+    navigation.push("Register");
   };
 
   const entrar = () => {
@@ -76,7 +80,7 @@ const Login = ({ navigation })  => {
           <View style={styles.input2}>
             <TouchableOpacity>
               <Button
-                onPress={() => console.log("Pressed")}
+                onPress={TelaRegister}
                 theme={{ colors: { primary: "#fff" } }}
               >
                 Cadastrar-se
