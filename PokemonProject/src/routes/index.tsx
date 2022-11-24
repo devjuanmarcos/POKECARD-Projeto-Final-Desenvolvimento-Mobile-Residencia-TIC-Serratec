@@ -2,22 +2,24 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from "@react-navigation/native";
-import { MaterialCommunityIcons } from "@expo/vector-icons"
-
+import { AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import ImageComp from "../components/ImageComp";
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 import { Pokemon } from "../screens/Produto";
 import { Home } from "../screens/Home";
 import Login from "../screens/Login";
+import  { PokemonCard }  from "../components/PokemonCard"
+import { Carrinho } from "../screens/Cart";
 
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
-  home: { token: string };
-  Cartas: undefined;
-  Carrinho: undefined;
+  Home: { token: string };
+  Cards: undefined;
+  Cart: undefined;
+  Logout: undefined;
 }
 export function Routeshome() {
 
@@ -25,36 +27,41 @@ export function Routeshome() {
      <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: "#fff",
+                tabBarActiveTintColor: "#000",
                 tabBarInactiveTintColor: "#aaa",
-                tabBarInactiveBackgroundColor: "#000",
-                tabBarStyle: { backgroundColor: "#000", paddingBottom: 2 ,height:50}
+                tabBarInactiveBackgroundColor: "#FFD700",
+                tabBarStyle: { backgroundColor: "#FFD700", paddingBottom: 1 ,height:50, borderTopWidth:3, borderTopColor:'black'}
             }}
         >
             <Tab.Screen
-                name='home'
+                name='Home'
                 component={Home}
                 options={{
                     tabBarIcon: ({ color }) => {
                         return (
-                            <MaterialCommunityIcons
-                                resizeMode='contain'
-                                name="home"
-                            />
+                          <AntDesign name="home" size={24} color="black" />
                         )
                     }
                 }}
             />
             <Tab.Screen
-                name="Cartas"
+                name="Cards"
                 component={Pokemon}
                 options={{
                     tabBarIcon: ({ color }) => {
                       return (
-                        <MaterialCommunityIcons
-                          resizeMode='contain'
-                          name="cards"
-                        />
+                        <MaterialCommunityIcons name="cards-outline" size={24} color="black" />
+                      )
+                    }
+                }}
+            />
+            <Tab.Screen
+                name="Cart"
+                component={Carrinho}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                      return (
+                        <AntDesign name="shoppingcart" size={24} color="black" />
                       )
                     }
                 }}
@@ -86,6 +93,15 @@ export function Routes() {
           options={{ headerShown: false }} 
           name="Home" 
           component={Routeshome} />
+        
+        <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="ImageComp" 
+          component={ImageComp} />
+          <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Cards" 
+          component={PokemonCard} />
 
       </Stack.Navigator> 
     </NavigationContainer>
