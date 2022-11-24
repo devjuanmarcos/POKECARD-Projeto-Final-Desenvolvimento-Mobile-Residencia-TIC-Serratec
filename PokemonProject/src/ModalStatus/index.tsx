@@ -32,12 +32,13 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
     const salvaListaDePokemon = useContext(CarrinhoContexto).salvaListaDePokemon
     const tiraPokemonDoCarrinho = useContext(CarrinhoContexto).removePokemonDoCarrinho
 
-    //let precoRandomico = Math.floor(Math.random() * 1000)
+    let precoRandomico = Math.floor(Math.random() * 1000)
 
     function botaPokemonNoCarrinho() {
         let pokemonComPreco: listaPokemon = {
             id: pokemonStatus.id,
             name: pokemonStatus.name,
+            preco: precoRandomico,
         }
         salvaListaDePokemon(pokemonComPreco)
         setModal(false);
@@ -91,6 +92,14 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                     </Text>
                                     <Text style={styles.text}>
                                         R$ {pokemonStatus.cardmarket.prices.averageSellPrice}
+                                    </Text>
+                                </View>
+                                <View style={styles.firstStats}>
+                                    <Text style={styles.textTitle}>
+                                        Preco:
+                                    </Text>
+                                    <Text style={styles.text}>
+                                        R$ {preco ? preco : precoRandomico},00
                                     </Text>
                                 </View>
 

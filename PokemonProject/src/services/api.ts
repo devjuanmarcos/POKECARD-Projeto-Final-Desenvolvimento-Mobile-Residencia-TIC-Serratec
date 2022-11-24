@@ -10,6 +10,7 @@ const apiPokemon = axios.create({
 export interface listaPokemon {
     id: string,
     name: string,
+    preco?: number
 }
 
 interface getPokemonRespostaProps {
