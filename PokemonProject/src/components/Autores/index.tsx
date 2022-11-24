@@ -92,7 +92,9 @@ const Autores = ({ navigation }) => {
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               Michael Fernandes
             </Text>
-            <Text style={{ fontSize: 17, textAlign: "center" }}></Text>
+            <Text style={{ fontSize: 17, textAlign: "center" }}>
+            Residência em TIC/Software (Serratec) Full stack Developer - Biologo
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -111,7 +113,7 @@ const Autores = ({ navigation }) => {
               Manuela Azeredo
             </Text>
             <Text style={{ fontSize: 17, textAlign: "center" }}>
-            Residência em TIC/Software (Serratec) Full stack Developer - Biologo
+            Residência em TIC/Software (Serratec) Full stack Developer
             </Text>
           </View>
         </TouchableOpacity>
