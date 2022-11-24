@@ -10,6 +10,7 @@ import { Home } from "../screens/Home";
 import Login from "../screens/Login";
 import  { PokemonCard }  from "../components/PokemonCard"
 import { Carrinho } from "../screens/Cart";
+import Autores from "../components/Autores";
 
 const Stack = createStackNavigator();
 
@@ -98,10 +99,15 @@ export function Routes() {
           options={{ headerShown: false }} 
           name="ImageComp" 
           component={ImageComp} />
-          <Stack.Screen  
+        <Stack.Screen  
           options={{ headerShown: false }} 
           name="Cards" 
           component={PokemonCard} />
+        <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Autores" 
+          component={Autores} />
+
 
       </Stack.Navigator> 
     </NavigationContainer>
