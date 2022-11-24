@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { View, Modal, Text, ModalProps, Image, TouchableOpacity, ScrollView, ActivityIndicator } from "react-native";
 import { Botao } from '../../src/components/BotaoProps';
 import { styles } from './styles';
-
 import { FontAwesome } from '@expo/vector-icons';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import { pokemonStatusProps, getPokemonEspecifico, listaPokemon } from '../../src/services/api';
+import { pokemonStatusProps, listaPokemon, getPokemonEspecifico } from '../../src/services/api';
 import { CarrinhoContexto } from '../Context/CarrinhoContexto';
 
 interface ModalStatusProps extends ModalProps {
@@ -81,16 +80,14 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                             Raridade:
                                         </Text>
                                         <Text style={styles.text}>
-                                            {pokemonStatus.rarity}
+                                            {pokemonStatus.name}
                                         </Text>
                                     </View>
                                     <View style={styles.firstStats}>
                                         <Text style={styles.textTitle}>
                                             Tipo:
                                         </Text>
-                                        <Text style={styles.text}>
-                                            {pokemonStatus.types[0]}
-                                        </Text>
+                                        
                                     </View>
                                     <View style={styles.firstStats}>
                                         <Text style={styles.textTitle}>
@@ -109,20 +106,20 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                         {pokemonStatus.hp}
                                     </Text>
                                 </View>
-                                {pokemonStatus.types[2] &&
-                                    <View style={styles.descriptionContainer}>
-                                        <Text style={styles.textTitle}>
-                                            Informações adicionais:
-                                        </Text>
-                                        <Text style={styles.text}>
-                                            {pokemonStatus.types.map((text, id) => {
-                                                if (id > 1)
-                                                    return text
-                                            })}
+                                    {/*pokemonStatus.types[2] &&
+                                        <View style={styles.descriptionContainer}>
+                                            <Text style={styles.textTitle}>
+                                                Informações adicionais:
+                                            </Text>
+                                            <Text style={styles.text}>
+                                                {pokemonStatus.types.map((text, id) => {
+                                                    if (id > 1)
+                                                        return text
+                                                })}
 
-                                        </Text>
-                                    </View>
-                                }
+                                            </Text>
+                                        </View>
+                                            */}
                             </ScrollView>
                             {preco ?
                                 <Botao

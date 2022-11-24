@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Text, TouchableOpacityProps, TouchableOpacity, Image } from "react-native";
 import { listaPokemon } from "../../services/api";
 import { styles } from "./styles";
-
 import { FontAwesome } from '@expo/vector-icons';
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 
