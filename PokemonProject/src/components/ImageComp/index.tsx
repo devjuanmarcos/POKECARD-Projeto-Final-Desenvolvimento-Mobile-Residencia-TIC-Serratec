@@ -1,29 +1,41 @@
 import React, { Component } from "react";
-import { View, Image, Text } from "react-native";
+import { View, ScrollView, Image, Text, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles";
 
-export default class ImageComp extends Component {
- 
-
-  render() {
+ const ImageComp =  ({ navigation }) => {
+  
+  const TelaHome = () => {
+    navigation.push("Home");
+  };
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
+        <TouchableOpacity style={styles.home} onPress={TelaHome}>
+        <Text style={styles.title} >
+                  Home 
+                </Text>
+                <AntDesign style={styles.icone} name="home" size={24} color="black" />
+        </TouchableOpacity>
         <View style={styles.rowStyle}>
           <View style={styles.textWidth}>
             <Text style={{ fontSize: 22, textAlign: "center" }}>
-              Pikachu Fofinho
+              PIKACHU REGALUS
             </Text>
           </View>
           <View style={styles.imageWidth}>
             <Image
               style={styles.imagemTamanho}
-              source={require('../../assets/pikaRegalus.jpg')}
+              source={require('../../assets/PikaRegalus.jpg')}
+              
             />
           </View>
         </View>
 
         <View style={styles.rowStyle}>
           <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU ONE PEACE
+            </Text>
             <Text style={{ fontSize: 22, textAlign: "center" }}>
             </Text>
           </View>
@@ -39,6 +51,9 @@ export default class ImageComp extends Component {
 
         <View style={styles.rowStyle}>
           <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU FOFINHO
+            </Text>
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               
             </Text>
@@ -55,6 +70,91 @@ export default class ImageComp extends Component {
 
         <View style={styles.rowStyle}>
           <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU MILO
+            </Text>
+          </View>
+          <View style={styles.imageWidth}>
+            <Image
+              style={styles.imagemTamanho}
+              source={require('../../assets/pikaMilo.jpg')
+               }
+            />
+          </View>
+        </View>
+        <View style={styles.rowStyle}>
+          <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU FUT
+            </Text>
+          </View>
+          <View style={styles.imageWidth}>
+            <Image
+              style={styles.imagemTamanho}
+              source={require('../../assets/pikaFut.jpg')
+                
+              }
+            />
+          </View>
+        </View>
+        <View style={styles.rowStyle}>
+          <View style={styles.textWidth}>
+            <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU MU
+              </Text>
+              
+          </View>
+          <View style={styles.imageWidth}>
+            <Image
+              style={styles.imagemTamanho}
+              source={require('../../assets/pikaMu.jpg')}
+              
+            />
+          </View>
+        </View>
+
+        <View style={styles.rowStyle}>
+          <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU ONE PEACE
+            </Text>
+            <Text style={{ fontSize: 22, textAlign: "center" }}>
+            </Text>
+          </View>
+          <View style={styles.imageWidth}>
+            <Image
+              style={styles.imagemTamanho}
+              source={require('../../assets/pikaOnepeace.jpg')
+                
+              }
+            />
+          </View>
+        </View>
+
+        <View style={styles.rowStyle}>
+          <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU FOFINHO
+            </Text>
+            <Text style={{ fontSize: 22, textAlign: "center" }}>
+              
+            </Text>
+          </View>
+          <View style={styles.imageWidth}>
+            <Image
+              style={styles.imagemTamanho}
+              source={require('../../assets/pikafofo1.jpg')
+                
+              }
+            />
+          </View>
+        </View>
+
+        <View style={styles.rowStyle}>
+          <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU MILO
+            </Text>
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               
             </Text>
@@ -69,6 +169,9 @@ export default class ImageComp extends Component {
         </View>
         <View style={styles.rowStyle}>
           <View style={styles.textWidth}>
+          <Text style={{ fontSize: 22, textAlign: "center" }}>
+              PIKACHU FUT
+            </Text>
             <Text style={{ fontSize: 22, textAlign: "center" }}>
             </Text>
           </View>
@@ -81,7 +184,8 @@ export default class ImageComp extends Component {
             />
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
-}
+
+export default ImageComp;
