@@ -23,5 +23,6 @@ export const styles = StyleSheet.create({
     },
     lista: {
         height: 100
-    }
+    },
+    
 })

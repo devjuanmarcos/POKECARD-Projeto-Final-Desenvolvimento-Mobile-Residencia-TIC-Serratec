@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { styles } from "./styles";
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { getPokemon, listaPokemon } from "../../services/api";
 import { ModalStatus } from "../../ModalStatus";

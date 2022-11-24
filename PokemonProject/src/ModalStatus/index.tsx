@@ -83,7 +83,9 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                         <Text style={styles.text}>  
                                         </Text>
                                     </View>
-                                    <Image style={styles.image} source={{uri:'{pokemonStatus.images.small}'}} />
+                                    <Image 
+                                    style={styles.image} 
+                                    source={{uri:pokemonStatus.images.small}} />
                                 </View>
                                 <View style={styles.descriptionContainer}>
                                     <Text style={styles.textTitle}>
