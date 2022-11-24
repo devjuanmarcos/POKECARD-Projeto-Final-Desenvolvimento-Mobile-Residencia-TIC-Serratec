@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#567088",
   },
   rowStyle: {
-    borderTopColor:'#b15241',
+    borderTopColor:'#c22',
     borderTopWidth:15,
     backgroundColor:'#e3e8ec',    
     padding:5,
