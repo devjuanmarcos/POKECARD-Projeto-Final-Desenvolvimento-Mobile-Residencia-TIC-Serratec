@@ -9,6 +9,7 @@ import { PokemonCard } from "../../components/PokemonCard";
 
 export const Pokemon = () => {
 
+
     const [carregando, setCarregando] = useState<boolean>(false);
     const [listaPokemon, setListaPokemon] = useState<listaPokemon[]>([]);
 
@@ -41,12 +42,11 @@ export const Pokemon = () => {
 
             {carregando ?
                 <ActivityIndicator
-                    size={"large"}
+                    size={"small"}
                 />
                 :
                 <FlatList
                     data={listaPokemon}
-                    style={styles.lista}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => {
                         return (

@@ -12,16 +12,12 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         width: "90%",
     },
-    closeIcon: {
-        tintColor: '#fff',
-        height: 25,
-        width: 25
-    },
     text: {
         color: '#fff',
         fontSize: 16,
         marginBottom: 10,
-        textAlign: 'justify'
+        textAlign: 'justify',
+        //marginLeft: 130
     },
     textTitle: {
         color: '#fff',
@@ -35,13 +31,14 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#12100055'
+        backgroundColor: '#12100055',
+        alignContent: 'center'
     },
     modalContainer: {
         backgroundColor: '#121000',
         borderRadius: 20,
         padding: "5%",
-        alignItems: "flex-start",
+        alignItems: "center",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -55,10 +52,12 @@ export const styles = StyleSheet.create({
     },
     firstStatsContainer: {
         flexDirection: "row",
+        
     },
     descriptionContainer: {
-        flexDirection: "column",
-        width: "100%"
+        flexDirection: "row",
+        width: "100%",
+        justifyContent: 'space-evenly'
     },
     firstStats: {
         flexDirection: "column",
@@ -66,7 +65,11 @@ export const styles = StyleSheet.create({
         marginHorizontal: 5
     },
     image: {
-        width: 30,
-        height: 30
+        width: 245,
+        height: 342,
+        position: 'relative',
+    },
+    scrollContainer: {
+        paddingHorizontal: 20
     }
 })

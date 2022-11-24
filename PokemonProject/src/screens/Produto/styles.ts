@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
@@ -18,11 +18,7 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 24,
         fontWeight: 'bold',
-        //marginBottom: 40,
         marginLeft: 20,
-    },
-    lista: {
-        height: 100
     },
     
 })
