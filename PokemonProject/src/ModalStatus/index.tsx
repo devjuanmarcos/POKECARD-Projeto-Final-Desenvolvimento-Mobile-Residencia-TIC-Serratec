@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { View, Modal, Text, ModalProps, Image, TouchableOpacity, ScrollView, ActivityIndicator } from "react-native";
 import { Botao } from '../../src/components/BotaoProps';
 import { styles } from './styles';
-
 import { FontAwesome } from '@expo/vector-icons';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
-import { pokemonStatusProps, getPokemonEspecifico, listaPokemon } from '../../src/services/api';
+import { pokemonStatusProps, listaPokemon, getPokemonEspecifico } from '../../src/services/api';
 import { CarrinhoContexto } from '../Context/CarrinhoContexto';
 
 interface ModalStatusProps extends ModalProps {
@@ -22,7 +21,7 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
 
     useEffect(() => {
         getPokemonEspecifico(id).then((res) => {
-            setPokemonStatus(res.data);
+            setPokemonStatus(res.data.data);
         }).catch((err) => {
             console.log(err);
         }).finally(() => {
@@ -45,6 +44,7 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
 =======
             id: pokemonStatus.id,
             name: pokemonStatus.name,
+            hp: pokemonStatus.hp,
             //url: pokemonStatus.url,
             //preco:
 >>>>>>> Dev
@@ -87,26 +87,12 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                         <Text style={styles.textTitle}>
                                             Raridade:
                                         </Text>
-                                        <Text style={styles.text}>
-                                            {pokemonStatus.rarity}
+                                        <Text style={styles.text}>  
                                         </Text>
                                     </View>
-                                    <View style={styles.firstStats}>
-                                        <Text style={styles.textTitle}>
-                                            Tipo:
-                                        </Text>
-                                        <Text style={styles.text}>
-                                            {pokemonStatus.types[0]}
-                                        </Text>
-                                    </View>
-                                    <View style={styles.firstStats}>
-                                        <Text style={styles.textTitle}>
-                                            Preco:
-                                        </Text>
-                                        <Text style={styles.text}>
-                                            R$ preço bem bacana
-                                        </Text>
-                                    </View>
+                                    <Image 
+                                    style={styles.image} 
+                                    source={{uri:pokemonStatus.images.small}} />
                                 </View>
                                 <View style={styles.descriptionContainer}>
                                     <Text style={styles.textTitle}>
@@ -116,20 +102,7 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                         {pokemonStatus.hp}
                                     </Text>
                                 </View>
-                                {pokemonStatus.types[2] &&
-                                    <View style={styles.descriptionContainer}>
-                                        <Text style={styles.textTitle}>
-                                            Informações adicionais:
-                                        </Text>
-                                        <Text style={styles.text}>
-                                            {pokemonStatus.types.map((text, id) => {
-                                                if (id > 1)
-                                                    return text
-                                            })}
-
-                                        </Text>
-                                    </View>
-                                }
+                                   
                             </ScrollView>
                             {preco ?
                                 <Botao

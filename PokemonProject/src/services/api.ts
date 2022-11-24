@@ -16,7 +16,11 @@ export interface listaPokemon {
 =======
     id: string,
     name: string,
+<<<<<<< HEAD
 >>>>>>> Dev
+=======
+    hp: string,
+>>>>>>> Api
 }
 
 interface getPokemonRespostaProps {
@@ -184,7 +188,7 @@ export interface Cardmarket {
 }
 
 
-export function getEquipementoEspecifico(id: string): Promise<AxiosResponse<pokemonStatusProps | any>> {
+export function getPokemonEspecifico(id: string): Promise<AxiosResponse<pokemonStatusProps | any>> {
     let url = `cards/${id}`
 >>>>>>> Dev
 
