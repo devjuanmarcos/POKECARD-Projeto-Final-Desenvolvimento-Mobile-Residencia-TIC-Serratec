@@ -94,14 +94,7 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                         R$ {pokemonStatus.cardmarket.prices.averageSellPrice}
                                     </Text>
                                 </View>
-                                <View style={styles.firstStats}>
-                                    <Text style={styles.textTitle}>
-                                        Preco:
-                                    </Text>
-                                    <Text style={styles.text}>
-                                        R$ {preco ? preco : precoRandomico},00
-                                    </Text>
-                                </View>
+                               
 
                             </ScrollView>
                             {preco ?

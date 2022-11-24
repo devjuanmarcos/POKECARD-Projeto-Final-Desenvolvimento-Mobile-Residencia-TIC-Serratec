@@ -73,7 +73,7 @@ const Autores = ({ navigation }) => {
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               Juan Marcos Texe
             </Text>
-            <Text style={{ fontSize: 17, textAlign: "center", }}>
+            <Text style={{ fontSize: 17, textAlign: "center" }}>
             Residência em TIC/Software (Serratec) Full stack Developer - Designer Gráfico (Videos e Imagens)
             </Text>
           </View>
