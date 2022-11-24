@@ -8,6 +8,7 @@ import {
   ImageBackground,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
+import { postUsuario } from "../../services/apiLogin";
 import { Button } from "react-native-paper";
 
 import styles from "./styles";
@@ -17,16 +18,26 @@ const Register = ({ navigation }) => {
   const TelaLogin = () => {
     navigation.push("Login");
   };
+
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const cadastro = () => {
-    // alert(nome);
-    // alert(email);
-    // alert(senha);
-    //fazer chamada no back-end para cadastro.
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const cadastro = () => {
+      //nome
+      //email
+      //senha
+    };
+
+    postUsuario.create(cadastro).then{(res) => {
+      console.log(res);
+      console.log(res.data);
+    }}
+  }
+  
 
   return (
     <View>
@@ -37,7 +48,7 @@ const Register = ({ navigation }) => {
         }}
         source={require("../../assets/pokemonblu2.png")}
       >
-        <View style={styles.container}>
+        <View style={styles.container} onSubmit={handleSubmit}>
           <Animatable.Image
             animation="pulse"
             iterationCount="infinite"
@@ -59,6 +70,7 @@ const Register = ({ navigation }) => {
             </Text>
             <TextInput
               style={styles.textInput}
+              name = "nome"
               placeholder="Digite seu nome"
               onChangeText={(text) => setNome(text)}
             />

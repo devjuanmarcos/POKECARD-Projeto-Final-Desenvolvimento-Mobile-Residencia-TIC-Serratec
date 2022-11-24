@@ -9,7 +9,6 @@ import { PokemonCard } from "../../components/PokemonCard";
 
 export const Pokemon = () => {
 
-
     const [carregando, setCarregando] = useState<boolean>(false);
     const [listaPokemon, setListaPokemon] = useState<listaPokemon[]>([]);
 
