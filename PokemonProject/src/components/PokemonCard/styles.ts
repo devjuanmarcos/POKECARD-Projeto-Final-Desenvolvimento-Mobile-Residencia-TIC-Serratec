@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     buttonMagicItem: {
-        backgroundColor: '#1f1e25',
+        backgroundColor: '#210521',
         padding: 15,
         borderRadius: 50,
         alignItems: 'center',
@@ -11,10 +11,11 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     textMagicItem: {
-        marginLeft: 5,
         color: '#FFF',
         fontSize: 16,
-        width:"80%",
+        width:"100%",
+        textAlign: 'center'
+
     },
     closeIcon: {
         tintColor: '#fff',

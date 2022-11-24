@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Text, TouchableOpacityProps, TouchableOpacity, Image } from "react-native";
+import { Text, TouchableOpacityProps, TouchableOpacity, Image, View } from "react-native";
 import { listaPokemon } from "../../services/api";
 import { styles } from "./styles";
 import { FontAwesome } from '@expo/vector-icons';
@@ -18,7 +18,7 @@ export const PokemonCard = ({ pokemon, setModal,setPrecoSelecionado, setIndexSel
 
     function abreModal() {
         setIndexSelecionado(pokemon.id);
-        //setPrecoSelecionado && setPrecoSelecionado(pokemon.preco)
+        setPrecoSelecionado && setPrecoSelecionado(pokemon.preco)
         setModal(true);
     }
 
@@ -28,11 +28,11 @@ export const PokemonCard = ({ pokemon, setModal,setPrecoSelecionado, setIndexSel
             <Text style={styles.textMagicItem}>
                 {pokemon.name}
             </Text>
-            {/*{pokemon.preco &&
-                <TouchableOpacity onPress={()=>removePokemonDoCarrinho(pokemon.index)}>
+            {pokemon.preco &&
+                <TouchableOpacity onPress={()=>removePokemonDoCarrinho(pokemon.id)}>
                     <FontAwesome name="close" size={25} color="#fff" />
                 </TouchableOpacity>
-            }*/}
+            }
         </TouchableOpacity>
     )
 }

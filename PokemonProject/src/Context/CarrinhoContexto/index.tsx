@@ -11,7 +11,7 @@ interface CarrinhoContextoProps {
     listaDePokemon: listaPokemon[];
     salvaListaDePokemon: (pokemon: listaPokemon) => void;
     precoTotal: number;
-    removePokemonDoCarrinho: (index: string) => void;
+    removePokemonDoCarrinho: (id: string) => void;
 }
 
 export const CarrinhoContexto = createContext<CarrinhoContextoProps>({
@@ -21,7 +21,7 @@ export const CarrinhoContexto = createContext<CarrinhoContextoProps>({
     }],
     salvaListaDePokemon: (pokemon: listaPokemon) => { },
     precoTotal: 0,
-    removePokemonDoCarrinho: (index: string) => { },
+    removePokemonDoCarrinho: (id: string) => { },
 });
 
 export const ProvedorCarrinho = ({ children }: ProvedorCarrinhoProps) => {

@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, Text, ActivityIndicator, FlatList } from "react-native";
-import { getPokemon} from "../../services/api";
 import { styles } from "./styles";
-
-import { listaPokemon } from "../../services/api";
-import { PokemonCard } from "../../components/PokemonCard";
 import { ModalStatus } from "../../ModalStatus";
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
+import { Text, View, Image, ImageBackground, ScrollView, TouchableOpacity ,FlatList} from 'react-native';
+
+import { PokemonCard } from '../../components/PokemonCard';
 
 export const Carrinho = () => {
 
@@ -21,6 +19,7 @@ export const Carrinho = () => {
         <View
             style={styles.container}
         >
+          
             <Text style={styles.title}>
                 Carrinho
             </Text>

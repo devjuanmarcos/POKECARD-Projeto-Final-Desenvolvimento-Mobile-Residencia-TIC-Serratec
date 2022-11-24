@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, ActivityIndicator, FlatList } from "react-native";
+import { View, Text, ActivityIndicator, FlatList, ImageBackground } from "react-native";
 import { styles } from "./styles";
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -32,7 +32,13 @@ export const Pokemon = () => {
     }
 
     return (
+        <View>
+             <ImageBackground
+        style={{ width: "100%", height: "100%" }}
+        source={require("../../assets/Pokemon-3.png")}
+      >
         <View style={styles.container}>
+            
             <View style={styles.header}>
                 <MaterialCommunityIcons name="pokeball" size={24} color="black" />
                 <Text style={styles.title}>
@@ -67,6 +73,9 @@ export const Pokemon = () => {
                     setModal={setModal}
                 />
             }
+           
+        </View>
+        </ImageBackground>
         </View>
     )
 }

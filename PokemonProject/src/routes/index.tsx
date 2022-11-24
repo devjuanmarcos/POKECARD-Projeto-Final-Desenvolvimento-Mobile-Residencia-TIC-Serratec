@@ -2,14 +2,15 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from "@react-navigation/native";
-import { AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import ImageComp from "../components/ImageComp";
-import { setStatusBarBackgroundColor } from "expo-status-bar";
 import { Pokemon } from "../screens/Produto";
 import { Home } from "../screens/Home";
 import Login from "../screens/Login";
 import  { PokemonCard }  from "../components/PokemonCard"
 import { Carrinho } from "../screens/Cart";
+import Autores from "../components/Autores";
+import Register from "../screens/Register";
 
 const Stack = createStackNavigator();
 
@@ -98,10 +99,19 @@ export function Routes() {
           options={{ headerShown: false }} 
           name="ImageComp" 
           component={ImageComp} />
-          <Stack.Screen  
+        <Stack.Screen  
           options={{ headerShown: false }} 
           name="Cards" 
           component={PokemonCard} />
+        <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Autores" 
+          component={Autores} />
+          <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Register" 
+          component={Register} />
+
 
       </Stack.Navigator> 
     </NavigationContainer>
