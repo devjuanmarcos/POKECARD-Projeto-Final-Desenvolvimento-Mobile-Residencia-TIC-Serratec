@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     position: "relative",
     borderRadius:20,
     marginBottom:-20
-
   },
 
   content: {
