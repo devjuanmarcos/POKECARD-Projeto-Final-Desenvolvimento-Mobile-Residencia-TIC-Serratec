@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { Button } from "react-native-paper";
+import clientService from "../../services/userService";
 
 import styles from "./styles";
 
@@ -21,15 +22,29 @@ const Register = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const cadastro = () => {
-    // alert(nome);
-    // alert(email);
-    // alert(senha);
-    //fazer chamada no back-end para cadastro.
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
+    const user = {
+        nome: nome,
+        senha: senha,
+        email: email
+    };
+
+    clientService.create(user).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
+  }
+    const cadastro = () => {
+      // alert(nome);
+      // alert(email);
+      // alert(senha);
+      //fazer chamada no back-end para cadastro.
+    };
+  
   return (
-    <View>
+    <View onSubmit={handleSubmit}>
       <ImageBackground
         style={{
           width: "100%",
@@ -37,7 +52,7 @@ const Register = ({ navigation }) => {
         }}
         source={require("../../assets/pokemonblu2.png")}
       >
-        <View style={styles.container}>
+        <View style={styles.container} >
           <Animatable.Image
             animation="pulse"
             iterationCount="infinite"
