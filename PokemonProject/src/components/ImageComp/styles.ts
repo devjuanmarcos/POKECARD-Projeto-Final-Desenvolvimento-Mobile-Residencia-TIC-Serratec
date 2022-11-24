@@ -2,29 +2,65 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   imagemTamanho: {
-    width: 50,
-    height: 50,
+    width: 90,
+    height: 90,
+  },
+  title:{
+    color: "#f6c052",
+    fontSize: 17,
+    marginLeft: 10,
+    fontWeight: "bold",
+    alignItems: "center",
+  },
+  home: {
+    marginTop:50,
+    marginBottom:30,
+    marginLeft:10,
+    position:'relative',
+    height: 40,
+    width: 90,
+    backgroundColor: "#b15241",
+    borderWidth: 2,
+    borderColor:'#f6c052',
+    borderRadius: 50,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+  },
+  icone:{
+    alignItems:'center'
   },
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
+    marginBottom:5,
+    backgroundColor: "#567088",
   },
   rowStyle: {
+    borderTopColor:'#b15241',
+    borderTopWidth:15,
+    backgroundColor:'#e3e8ec',    
+    padding:5,
+    alignItems:'center',
+    
     flexDirection: "row",
-    marginTop: 10,
+    marginTop: 15,
   },
   textWidth: {
-    width: "50%",
-    alignSelf: "flex-start",
+    width: "60%",
+    alignItems:'center',
     marginStart: 0,
     marginTop: 10,
+    
   },
   imageWidth: {
-    width: "50%",
+  
+    borderRadius:50,
+    width: "40%",
     alignItems: "center",
     justifyContent: "center",
-    marginStart: 25,
+    marginStart: 20,
   },
+
 });
 
 export default styles;
