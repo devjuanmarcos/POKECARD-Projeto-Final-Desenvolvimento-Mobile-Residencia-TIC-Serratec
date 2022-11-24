@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { Button } from "react-native-paper";
-import clientService from "../../services/userService";
+import userService from "../../services/userService";
 
 import styles from "./styles";
 
@@ -22,29 +22,21 @@ const Register = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
     const user = {
         nome: nome,
         senha: senha,
         email: email
     };
 
-    clientService.create(user).then((res) => {
+    userService.create(user).then((res) => {
       console.log(res);
       console.log(res.data);
     });
-  }
-    const cadastro = () => {
-      // alert(nome);
-      // alert(email);
-      // alert(senha);
-      //fazer chamada no back-end para cadastro.
-    };
+  
+    
   
   return (
-    <View onSubmit={handleSubmit}>
+    <View >
       <ImageBackground
         style={{
           width: "100%",
@@ -73,6 +65,7 @@ const Register = ({ navigation }) => {
               Cadastre-se para ter acesso a todas as novidades
             </Text>
             <TextInput
+              
               style={styles.textInput}
               placeholder="Digite seu nome"
               onChangeText={(text) => setNome(text)}
