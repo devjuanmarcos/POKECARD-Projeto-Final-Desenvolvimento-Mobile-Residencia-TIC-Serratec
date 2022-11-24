@@ -3,7 +3,7 @@ import { View, Modal, Text, ModalProps, Image, TouchableOpacity, ScrollView, Act
 import { Botao } from '../../src/components/BotaoProps';
 import { styles } from './styles';
 
-import { Icon } from 'react-native-paper/lib/typescript/components/List/List';
+import { FontAwesome } from '@expo/vector-icons';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { pokemonStatusProps, getPokemonEspecifico, listaPokemon } from '../../src/services/api';
 import { CarrinhoContexto } from '../Context/CarrinhoContexto';
@@ -11,17 +11,17 @@ import { CarrinhoContexto } from '../Context/CarrinhoContexto';
 interface ModalStatusProps extends ModalProps {
     modal: boolean;
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
-    index: string;
+    id: string;
     preco?: number
 }
 
-export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalStatusProps) => {
+export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatusProps) => {
 
     const [pokemonStatus, setPokemonStatus] = useState<pokemonStatusProps>();
     const [carregando, setCarregando] = useState<boolean>(true);
 
     useEffect(() => {
-        getPokemonEspecifico(index).then((res) => {
+        getPokemonEspecifico(id).then((res) => {
             setPokemonStatus(res.data);
         }).catch((err) => {
             console.log(err);
@@ -33,14 +33,21 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
     const salvaListaDePokemon = useContext(CarrinhoContexto).salvaListaDePokemon
     const tiraPokemonDoCarrinho = useContext(CarrinhoContexto).removePokemonDoCarrinho
 
-    let precoRandomico = Math.floor(Math.random() * 1000)
+    //let precoRandomico = Math.floor(Math.random() * 1000)
 
     function botaPokemonNoCarrinho() {
         let pokemonComPreco: listaPokemon = {
+<<<<<<< HEAD
             index: pokemonStatus.index,
             name: pokemonStatus.name,
             url: pokemonStatus.url,
             preco: precoRandomico
+=======
+            id: pokemonStatus.id,
+            name: pokemonStatus.name,
+            //url: pokemonStatus.url,
+            //preco:
+>>>>>>> Dev
         }
         salvaListaDePokemon(pokemonComPreco)
         setModal(false);
@@ -71,7 +78,7 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
                                     style={{ alignContent: "flex-end", width: "10%" }}
                                     onPress={() => setModal(false)}
                                 >
-                                    <Image style={styles.closeIcon} source={Icon} />
+                                    <FontAwesome name="close" size={25} color="#fff" />
                                 </TouchableOpacity>
                             </View>
                             <ScrollView showsVerticalScrollIndicator={false}>
@@ -81,7 +88,7 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
                                             Raridade:
                                         </Text>
                                         <Text style={styles.text}>
-                                            {pokemonStatus.rarity.name}
+                                            {pokemonStatus.rarity}
                                         </Text>
                                     </View>
                                     <View style={styles.firstStats}>
@@ -89,7 +96,7 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
                                             Tipo:
                                         </Text>
                                         <Text style={styles.text}>
-                                            {pokemonStatus.desc[0]}
+                                            {pokemonStatus.types[0]}
                                         </Text>
                                     </View>
                                     <View style={styles.firstStats}>
@@ -97,26 +104,26 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
                                             Preco:
                                         </Text>
                                         <Text style={styles.text}>
-                                            R$ {preco ? preco : precoRandomico},00
+                                            R$ preço bem bacana
                                         </Text>
                                     </View>
                                 </View>
                                 <View style={styles.descriptionContainer}>
                                     <Text style={styles.textTitle}>
-                                        Descricao:
+                                        HP:
                                     </Text>
                                     <Text style={styles.text}>
-                                        {pokemonStatus.desc[1]}
+                                        {pokemonStatus.hp}
                                     </Text>
                                 </View>
-                                {pokemonStatus.desc[2] &&
+                                {pokemonStatus.types[2] &&
                                     <View style={styles.descriptionContainer}>
                                         <Text style={styles.textTitle}>
                                             Informações adicionais:
                                         </Text>
                                         <Text style={styles.text}>
-                                            {pokemonStatus.desc.map((text, index) => {
-                                                if (index > 1)
+                                            {pokemonStatus.types.map((text, id) => {
+                                                if (id > 1)
                                                     return text
                                             })}
 
@@ -127,7 +134,7 @@ export const ModalStatus = ({ modal, setModal, index, preco, ...rest }: ModalSta
                             {preco ?
                                 <Botao
                                     title='Remover do Carrinho'
-                                    onPress={()=>tiraPokemonDoCarrinho(index)}
+                                    onPress={()=>tiraPokemonDoCarrinho(id)}
                                     activeOpacity={0.9}
 
                                 />

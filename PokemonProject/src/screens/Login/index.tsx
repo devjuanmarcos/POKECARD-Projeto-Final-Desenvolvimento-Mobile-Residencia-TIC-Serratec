@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { TextInput, Button } from "react-native-paper";
-
+import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
 const Login = ({ navigation })  => {
@@ -15,9 +15,22 @@ const Login = ({ navigation })  => {
     email: "",
     senha: "",
   });
+<<<<<<< HEAD
     const Telahome = () => {
     navigation.push("Home");
   };
+=======
+    const TelaHome = () => {
+    navigation.push("Home");
+  };
+
+  const entrar = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "Routes" }],
+    });
+  };
+>>>>>>> Dev
 
   return (
     <View style={styles.bgDark}>
@@ -25,11 +38,14 @@ const Login = ({ navigation })  => {
         style={{ width: "100%", height: "100%" }}
         source={require("../../assets/Pokemon-2.png")}
       >
-        <Image
+        <Animatable.Image
+          animation="pulse"
+          iterationCount="infinite"
+          direction="alternate"
           style={styles.logo}
           source={require("../../assets/pokemon-logo-8.png")}
         />
-        <View style={{ padding: 20 }}>
+        <Animatable.View style={{ padding: 20 }} animation={zoomOut}>
           <TextInput
             mode="flat"
             label="Email ou número de telefone"
@@ -41,7 +57,10 @@ const Login = ({ navigation })  => {
           />
 
           <TextInput
+<<<<<<< HEAD
            // blurOnSubmit="true"
+=======
+>>>>>>> Dev
             label="Senha"
             mode="flat"
             style={styles.input}
@@ -57,8 +76,13 @@ const Login = ({ navigation })  => {
               mode="text"
               style={styles.input}
               textColor="#fff"
+<<<<<<< HEAD
               //onPress={() => console.log("Pressed")}
               onPress={Telahome}
+=======
+             // onPress={() => console.log("Pressed")}
+             onPress={TelaHome}
+>>>>>>> Dev
             >
               Entrar
             </Button>
@@ -91,10 +115,24 @@ const Login = ({ navigation })  => {
               você não é um robô. Saiba mais.
             </Text>
           </TouchableOpacity>
-        </View>
+        </Animatable.View>
       </ImageBackground>
     </View>
   );
+};
+const zoomOut = {
+  0: {
+    opacity: 0,
+    scale: 0,
+  },
+  0.5: {
+    opacity: 1,
+    scale: 0.3,
+  },
+  1: {
+    opacity: 1,
+    scale: 1,
+  },
 };
 
 export default Login;

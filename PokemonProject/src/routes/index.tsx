@@ -19,7 +19,10 @@ export type RootTabParamList = {
   Cartas: undefined;
   Carrinho: undefined;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> Dev
 export function Routeshome() {
 
   return (
@@ -61,7 +64,11 @@ export function Routeshome() {
                 }}
             />
         </Tab.Navigator>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> Dev
   );
             }
 
@@ -83,12 +90,19 @@ export function Routes() {
           name="Login"
           component={Login}
         />
+<<<<<<< HEAD
         
        
         <Stack.Screen  options={{ headerShown: false }} name="Home" component={Routeshome} />
+=======
+        <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Home" 
+          component={Routeshome} />
+>>>>>>> Dev
 
       </Stack.Navigator> 
     </NavigationContainer>
-    
+
   );
 }

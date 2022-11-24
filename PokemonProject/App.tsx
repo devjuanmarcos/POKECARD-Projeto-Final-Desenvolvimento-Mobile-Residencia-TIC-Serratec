@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes } from "./src/routes";
-import Login from "./src/screens/Login";
 
-import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+export default function App  () {
 
+<<<<<<< HEAD
 const App = () => {
   const theme = {
     ...DefaultTheme,
@@ -19,3 +19,11 @@ const App = () => {
   return <Routes/>;
 };
 export default App;
+=======
+  return (
+    
+    <Routes/>
+  
+  );
+}
+>>>>>>> Dev
