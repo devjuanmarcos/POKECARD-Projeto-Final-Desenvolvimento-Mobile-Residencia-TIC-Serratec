@@ -52,7 +52,7 @@ const Autores = ({ navigation }) => {
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               Isis Reis Castro
             </Text>
-            <Text style={{ fontSize: 12, textAlign: "center" }}>
+            <Text style={{ fontSize: 17, textAlign: "center" }}>
              Residência em TIC/Software (Serratec) Full stack Developer - Tecnóloga em Logística
             </Text>
           </View>
@@ -73,7 +73,9 @@ const Autores = ({ navigation }) => {
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               Juan Marcos Texe
             </Text>
-            <Text style={{ fontSize: 17, textAlign: "center" }}></Text>
+            <Text style={{ fontSize: 17, textAlign: "center", }}>
+            Residência em TIC/Software (Serratec) Full stack Developer - Designer Gráfico (Videos e Imagens)
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -132,7 +134,9 @@ const Autores = ({ navigation }) => {
             <Text style={{ fontSize: 22, textAlign: "center" }}>
               Raquel Alves Barbosa
             </Text>
-            <Text style={{ fontSize: 17, textAlign: "center" }}></Text>
+            <Text style={{ fontSize: 17, textAlign: "center" }}>
+            Residência Serrarec - Formada em contabilidade
+            </Text>
           </View>
         </TouchableOpacity>
       </View>

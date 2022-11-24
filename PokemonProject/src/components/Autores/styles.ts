@@ -7,9 +7,10 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius:50,
-    marginTop:-150,
+    marginTop:-130,
     borderWidth:3,
     borderColor:'black'
+   
   },
   title:{
     color: "#f6c052",
