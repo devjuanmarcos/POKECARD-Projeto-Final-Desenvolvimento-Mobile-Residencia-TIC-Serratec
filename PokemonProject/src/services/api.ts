@@ -10,7 +10,6 @@ const apiPokemon = axios.create({
 export interface listaPokemon {
     id: string,
     name: string,
-    hp: string,
 }
 
 interface getPokemonRespostaProps {
@@ -22,6 +21,12 @@ export function getPokemon(): Promise<AxiosResponse<getPokemonRespostaProps, any
     let url = `cards/`;
 
     return apiPokemon.get(url);
+}
+
+export function getPokemonEspecifico(id: string): Promise<AxiosResponse<pokemonStatusProps | any>> {
+  let url = `cards/${id}`
+
+  return apiPokemon.get(url);
 }
 
 export interface pokemonStatusProps {
@@ -154,9 +159,3 @@ export interface Cardmarket {
   prices: Prices2;
 }
 
-
-export function getPokemonEspecifico(id: string): Promise<AxiosResponse<pokemonStatusProps | any>> {
-    let url = `cards/${id}`
-
-    return apiPokemon.get(url);
-}

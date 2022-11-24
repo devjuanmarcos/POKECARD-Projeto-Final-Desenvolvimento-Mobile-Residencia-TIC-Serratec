@@ -38,9 +38,6 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
         let pokemonComPreco: listaPokemon = {
             id: pokemonStatus.id,
             name: pokemonStatus.name,
-            hp: pokemonStatus.hp,
-            //url: pokemonStatus.url,
-            //preco:
         }
         salvaListaDePokemon(pokemonComPreco)
         setModal(false);
@@ -74,33 +71,34 @@ export const ModalStatus = ({ modal, setModal, id, preco, ...rest }: ModalStatus
                                     <FontAwesome name="close" size={25} color="#fff" />
                                 </TouchableOpacity>
                             </View>
-                            <ScrollView showsVerticalScrollIndicator={false}>
+                            <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                                 <View style={styles.firstStatsContainer}>
-                                    <View style={styles.firstStats}>
-                                        <Text style={styles.textTitle}>
-                                            Raridade:
-                                        </Text>
-                                        <Text style={styles.text}>  
-                                        </Text>
-                                    </View>
-                                    <Image 
-                                    style={styles.image} 
-                                    source={{uri:pokemonStatus.images.small}} />
+                                    <Image
+                                        style={styles.image}
+                                        source={{ uri: pokemonStatus.images.large }} />
                                 </View>
                                 <View style={styles.descriptionContainer}>
                                     <Text style={styles.textTitle}>
-                                        HP:
+                                        Raridade:
                                     </Text>
                                     <Text style={styles.text}>
-                                        {pokemonStatus.hp}
+                                        {pokemonStatus.rarity}
                                     </Text>
                                 </View>
-                                   
+                                <View style={styles.descriptionContainer}>
+                                    <Text style={styles.textTitle}>
+                                        Preco:
+                                    </Text>
+                                    <Text style={styles.text}>
+                                        R$ {pokemonStatus.cardmarket.prices.averageSellPrice}
+                                    </Text>
+                                </View>
+
                             </ScrollView>
                             {preco ?
                                 <Botao
                                     title='Remover do Carrinho'
-                                    onPress={()=>tiraPokemonDoCarrinho(id)}
+                                    onPress={() => tiraPokemonDoCarrinho(id)}
                                     activeOpacity={0.9}
 
                                 />
