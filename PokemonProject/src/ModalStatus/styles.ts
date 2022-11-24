@@ -65,4 +65,8 @@ export const styles = StyleSheet.create({
         width: "30%",
         marginHorizontal: 5
     },
+    image: {
+        width: '30',
+        height: '30'
+    }
 })

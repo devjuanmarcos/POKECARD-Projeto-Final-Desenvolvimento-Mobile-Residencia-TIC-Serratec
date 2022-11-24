@@ -11,7 +11,7 @@ export interface listaPokemon {
     id: string,
     name: string,
     //image: string,
-    //hp: string,
+    hp: string,
     //types: string[],
 }
 
