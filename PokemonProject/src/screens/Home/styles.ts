@@ -58,10 +58,11 @@ const styles = StyleSheet.create({
     height: 310,
     width: "90%",
     shadowOpacity: 0.5,
-    elevation: 50,
+    elevation: 90,
     shadowRadius: 1,
-    shadowOffset: { width: 57, height: 13 },
+    shadowOffset: { width: 5, height: 13 },
     margin: 10,
+    marginTop:15,
   },
   button: {
     height: 100,
@@ -74,11 +75,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomEndRadius: 10,
     borderBottomLeftRadius: 10,
+   
   },
   imageBox: {
     width: "100%",
     height: "67%",
     position: "relative",
+    borderRadius:20,
+    marginBottom:-20
+
   },
 
   content: {
@@ -87,7 +92,7 @@ const styles = StyleSheet.create({
     direction: "inherit",
   },
   textoDescricao: {
-    padding: 10,
+    padding: 1,
     color: "#000",
     alignItems: "center",
     justifyContent: "center",
@@ -97,6 +102,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   title: {
+    padding:10,
     color: "#000",
     fontSize: 17,
     marginLeft: 10,

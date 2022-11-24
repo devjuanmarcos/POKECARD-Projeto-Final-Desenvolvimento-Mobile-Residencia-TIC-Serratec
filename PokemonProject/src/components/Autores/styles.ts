@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     elevation: 50,
     shadowRadius: 1,
-    shadowOffset: { width: 57, height: 13 },
+    shadowOffset: { width: 5, height: 13 },
   },
   textWidth: {
     
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     elevation: 50,
     shadowRadius: 1,
-    shadowOffset: { width: 57, height: 13 },
+    shadowOffset: { width: 5, height: 6 },
     
   },
 
