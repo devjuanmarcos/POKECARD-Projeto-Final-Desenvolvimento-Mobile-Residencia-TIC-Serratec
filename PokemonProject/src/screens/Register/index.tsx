@@ -12,7 +12,11 @@ import { Button } from "react-native-paper";
 
 import styles from "./styles";
 
-const Register = () => {
+const Register = ({ navigation }) => {
+
+  const TelaLogin = () => {
+    navigation.push("Login");
+  };
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -92,9 +96,9 @@ const Register = () => {
           >
             Já tem uma conta?
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={TelaLogin}>
             <Button
-              onPress={() => console.log("Pressed")}
+              
               theme={{ colors: { primary: "#fff" } }}
             >
               Fazer Login

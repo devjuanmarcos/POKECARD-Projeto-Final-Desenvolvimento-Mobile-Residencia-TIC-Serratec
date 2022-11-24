@@ -11,6 +11,7 @@ import Login from "../screens/Login";
 import  { PokemonCard }  from "../components/PokemonCard"
 import { Carrinho } from "../screens/Cart";
 import Autores from "../components/Autores";
+import Register from "../screens/Register";
 
 const Stack = createStackNavigator();
 
@@ -107,6 +108,10 @@ export function Routes() {
           options={{ headerShown: false }} 
           name="Autores" 
           component={Autores} />
+          <Stack.Screen  
+          options={{ headerShown: false }} 
+          name="Register" 
+          component={Register} />
 
 
       </Stack.Navigator> 
