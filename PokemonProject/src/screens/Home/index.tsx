@@ -8,6 +8,7 @@ import * as Animatable from "react-native-animatable";
 import { PokemonCard } from '../../components/PokemonCard';
 
 
+
 export const Home = ({navigation}) =>{
 
   const [saudacoes, setSaudacoes] = useState<string>("");
@@ -18,8 +19,8 @@ export const Home = ({navigation}) =>{
   const TelaImageComp = () => {
     navigation.push("ImageComp");
   };
-  const TelaCard = () => {
-    navigation.push("Produto");
+  const Autores = () => {
+    navigation.push("Autores");
   };
 
   // useEffect(() => {
@@ -81,15 +82,15 @@ export const Home = ({navigation}) =>{
                 </View>
             </TouchableOpacity>
           <TouchableOpacity style={styles.boxButton}
-          onPress={TelaCard}>
+          onPress={Autores}>
             <Image style={styles.imageBox}
               source={require('../../assets/PikaDeboa.jpg')}/>
               <View style={styles.button}>
                 <Text style={styles.title}>
-                  -- CARTAS POKEMON --
+                  -- AUTORES --
                 </Text>
                 <Text style={styles.textoDescricao}>
-                    Loja de cards Pokemon, com várias opções para escolher, são realmente muitas!
+                    Um pouquinho sobre os autores do projeto.
                 </Text>
               </View>
           </TouchableOpacity>
