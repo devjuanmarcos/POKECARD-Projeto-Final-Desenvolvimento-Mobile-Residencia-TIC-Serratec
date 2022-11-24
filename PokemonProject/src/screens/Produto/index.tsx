@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { styles } from "./styles";
-import { Fontisto } from '@expo/vector-icons';
+
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { getPokemon, listaPokemon } from "../../services/api";
 import { ModalStatus } from "../../ModalStatus";
 import { PokemonCard } from "../../components/PokemonCard";
@@ -32,18 +33,20 @@ export const Pokemon = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Fontisto name="smiling" size={24} color="black" />
+                <MaterialCommunityIcons name="pokeball" size={24} color="black" />
+                <Text style={styles.title}>
+                    Loja De Cards
+                </Text>
             </View>
-            <Text style={styles.title}>
-                Loja De Cards
-            </Text>
+
             {carregando ?
                 <ActivityIndicator
-                    size={"small"}
+                    size={"large"}
                 />
                 :
                 <FlatList
                     data={listaPokemon}
+                    style={styles.lista}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => {
                         return (
